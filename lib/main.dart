@@ -3,7 +3,8 @@ import 'package:calculator/widgets/calculator_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
+  await Future.delayed(Duration(seconds: 1));
   runApp(const MyApp());
 }
 
@@ -97,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
           {
             res = ((secondnum * firstnum) / 100).toString();
           }
-        //   default:
-        //     {
-        //       res = firstnum.toString();
-        //     }
+        default:
+          {
+            res = '';
+          }
       }
       int indexofDot = res.indexOf('.');
       String afterDotStr = res.substring(indexofDot + 1);
